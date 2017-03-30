@@ -1,4 +1,4 @@
-// Variables 
+// Variables ======================================================
 
 // Boolean
 sunshine = true;
@@ -24,11 +24,12 @@ b = 'Lastname';
 c = a + ' ' + b; // 'Firstname Lastname'
 
 
-// Lists 
+// Lists (Arrays) =====================================================
 var list = ['red'];
 
 // Add an element; 
 list.push('green'); // ['red', 'green']
+
 var green = list[1]; // green
 var red = list[0]; // red
 
@@ -36,14 +37,14 @@ var red = list[0]; // red
 list.length; // 2
 
 
-// Branching (and logical operations)
+// Branching (and logical operations) =================================
 
 var a = 10; 
 var b = 20;
 
 var c = a > b // false
 var c = a < b // true
-var c = a === b // false (Note the triple equalsign. a and b are not always numbers)
+var c = a === b // false (Note the triple equal sign. a and b are not always numbers)
 
 if (a >= b) {
 	// if a bigger or equal to b do stuff here
@@ -53,7 +54,7 @@ if (a >= b) {
 	// None of those are true? Do this 
 }
 
-// Loops 
+// Loops ===============================================================
 
 // forward
 
@@ -78,7 +79,7 @@ for(var i=0; i <= 10; i++) {
 // backward (reverse)
 
 for(var i=10; i >= 0; i--) {
-	// do stuff 10 times by increasing i by one every step
+	// do stuff 10 times by decreasing i by one every step
 
 	var x = i * 10
 	// x = 100
