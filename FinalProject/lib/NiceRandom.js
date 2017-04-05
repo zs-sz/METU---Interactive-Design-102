@@ -15,7 +15,7 @@ presets = [
 ];
 
 
-class NiceRandom() {
+class NiceRandom {
 	constructor() {
 		this.selectedIndex = 0;
 	}
@@ -48,6 +48,5 @@ class NiceRandom() {
 
 	static add(preset) {
 		this.validate(preset);
-
 	}
 }

@@ -1,4 +1,4 @@
-class EndlesArray() {
+class EndlessArray {
 	constructor(size, prefilled = true) {
 		this.size = size;
 		this.prefilled = prefilled;
@@ -10,14 +10,16 @@ class EndlesArray() {
 	init() {
 		if(this.prefilled) {
 			for (var i = 0;i < this.size;i++) {
-				this.arr[i] = 0;
+				this.arr[i] = i;
 			}
 		}
 	}
 
 	next() {
-		return this.arr[this.index];
-		this.index = this.index++ % this.length;
+		var elem = this.arr[this.index];
+		this.index++;
+		this.index = (this.index % this.arr.length) ? this.index : 0;
+		return elem;
 	}
 
 	add(item) {
