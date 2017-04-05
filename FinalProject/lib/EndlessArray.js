@@ -25,4 +25,12 @@ class EndlessArray {
 	add(item) {
 		this.arr.push(item);
 	}
+
+	get length() {
+		return this.arr.length();
+	}
+
+	get toString() {
+		return JSON.stringify(this.arr);
+	}
 }
