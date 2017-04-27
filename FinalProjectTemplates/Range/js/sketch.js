@@ -2,7 +2,6 @@
 // ARC https://p5js.org/reference/#/p5/arc
 // MAP https://p5js.org/reference/#/p5/map
 
-// underlying math
 
 
 var rangeMax = 600;
@@ -55,12 +54,15 @@ function updateRanges() {
 
 	// coverting range to angle 
 	rangeToAngle = map(
-		settings.range,			// current range 
+		settings.range,			// value to interpolate 
 		0,						// the minimum value
 		rangeMax,				// the maximum value
 		angleMin,				// desired scale min (0)
 		angleMax				// desired scale max (360)
 	);
+
+
+	// your rangeconversion starts here
 
 }
 

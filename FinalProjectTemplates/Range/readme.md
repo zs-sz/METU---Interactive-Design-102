@@ -2,7 +2,7 @@
 
 ## description:
 
-Lienar interpolation is a heavily used technic in generative design. Create a custom image using an integer(whole numbers 1,2,3 etc) range and interpolate it to at least 5 other ranges using map() function in p5js.
+Linear interpolation is a heavily used technic in generative design. Create a custom image using an integer(whole numbers 1,2,3 etc) range and interpolate it to at least 5 other ranges using the map() function in p5js.
 
 ## guide
 
