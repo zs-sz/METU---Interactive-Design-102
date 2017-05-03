@@ -1,5 +1,8 @@
 var settings = {
-	backgroundColor: '#1b1b1b'
+	backgroundColor: '#1b1b1b',
+	size: 150,
+	fontSize: 32,
+	margin: 10
 };
 
 var currentHeight = 0;
@@ -12,7 +15,12 @@ var whiteList = [
 	'g','h','i','j','k','l',
 	'm','n','o','p','q','r',
 	's','t','u','v','w','x',
-	'y','z'
+	'y','z',
+	'A','B','C','D','E','F',
+	'G','H','I','J','K','L',
+	'M','N','O','P','Q','R',
+	'S','T','U','V','W','X',
+	'Y','Z', ' '
 ];
 
 rows.push([]);
@@ -28,23 +36,27 @@ function setup() {
 	textFont(mainFont);
 	Canvas.fluid();
 	background(settings.backgroundColor);
-
 }
 
 function draw() {
 	background(settings.backgroundColor);
+	renderLayout();
 }
 
-function windowResized() {
-	// makes a resizable fluid canvas (utils)
-	Canvas.fluid();
-	background(settings.backgroundColor);
-}
-
-function initGui() {
-	var gui = new dat.GUI();
-	gui.addColor(settings, 'backgroundColor');
-}
+function renderLayout() {
+	rows.forEach(function(row, rowIndex) {
+		// console.log(rowIndex);
+		rowWidth = (settings.size + settings.margin) * row.length;
+		rowOffset = (width - rowWidth) / 2; 
+		row.forEach(function(glyph, index) {
+			glyph.x = rowOffset + (settings.size + settings.margin) * index;
+			glyph.y = (settings.size + settings.margin) * (rowIndex + 1);
+			glyph.size = settings.size;
+			glyph.fontSize = settings.fontSize;
+			glyph.render();
+		});
+	}); 
+};
 
 function keyPressed(event) {
 	if (event.key === 'Enter' && currentRowIndex >= 0) {
@@ -54,11 +66,7 @@ function keyPressed(event) {
 	} else if (whiteList.includes(event.key)) {
 		addGlyph(event.key);
 	}
-	console.log(rows);
-}
-
-function keyTyped() {
-
+	console.log(event);
 }
 
 function nextRow() {
@@ -79,11 +87,26 @@ function removeGlyph() {
 		rows[currentRowIndex].splice(-1, 1);
 		if(!rows[currentRowIndex].length) {
 			removeLastRow();
-		} 
+		}
 	}
 };
 
 function addGlyph(char) {
-	g = new Glyph(char);
+	g = new Glyph(char, settings.size, settings.fontSize);
 	rows[currentRowIndex].push(g);
+}
+
+function windowResized() {
+	// makes a resizable fluid canvas (utils)
+	Canvas.fluid();
+	background(settings.backgroundColor);
+}
+
+function initGui() {
+	var gui = new dat.GUI();
+	gui.close();
+	gui.addColor(settings, 'backgroundColor');
+	gui.add(settings, 'size', 100, 150);
+	gui.add(settings, 'fontSize', 12, 64);
+	gui.add(settings, 'margin', 0, 60);
 }
