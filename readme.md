@@ -11,13 +11,12 @@
 - Atom (desktop) [link](http://atom.io/)
   (see setup guide below)
 
-
-## Contents
-
 ### Examples
 basic javascript and p5js examples
-### Final Project
-TBD
+
+### Final Project 
+See inside the folder
+
 ### Templates
 - Basic Inline - Single file, can be edited in any text editor(not Word or other Rich Text editors)
 - Codepen - See description inide the folder

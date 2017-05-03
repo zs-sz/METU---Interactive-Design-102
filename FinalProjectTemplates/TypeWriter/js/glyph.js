@@ -1,22 +1,26 @@
 function Glyph(letter, size, fontSize) {
 	this.letter = letter;
 	this.size = size || 90;
-	this.fontSize = fontSize || 64;
+	this.fontSize = fontSize || 18;
 	this.init();
 	this.x = 0;
 	this.y = 0
 }
 
 Glyph.prototype.init = function() {
-	this.render();
+	// this.render();
 }
+
 Glyph.prototype.render = function() {
 	textSize(this.fontSize);
-	// textAlign(CENTER);
+	// get the width of the text in pixels
 	var charSize = textWidth(this.letter);
+
+	// position the character to the middle 
 	var paddingX = (this.size - charSize) / 2;
 	var paddingY = (this.size / 2) - this.fontSize / 1.5;
 
+	// YOUR DESIGN COMES HERE
 	// draw the background here
 	fill(255);
 	rect(

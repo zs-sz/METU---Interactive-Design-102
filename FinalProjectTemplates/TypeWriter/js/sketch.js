@@ -1,7 +1,7 @@
 var settings = {
 	backgroundColor: '#1b1b1b',
-	size: 150,
-	fontSize: 32,
+	size: 50,
+	fontSize: 15,
 	margin: 10
 };
 
@@ -10,6 +10,8 @@ var baseHeight = 150;
 var mainFont;
 var rows = [];
 var currentRowIndex = 0;
+
+
 var whiteList = [
 	'a','b','c','d','e','f',
 	'g','h','i','j','k','l',
@@ -20,7 +22,8 @@ var whiteList = [
 	'G','H','I','J','K','L',
 	'M','N','O','P','Q','R',
 	'S','T','U','V','W','X',
-	'Y','Z', ' '
+	'Y','Z', 
+	' ', '.', ',', '!', '?'
 ];
 
 rows.push([]);
