@@ -7,16 +7,18 @@ function Node (pos, size) {
 }
 
 Node.prototype.init = function() {
-	this.render();
+	// this.render();
 };
 
 Node.prototype.render = function() {
 	ellipse(this.pos.x, this.pos.y, this.size, this.size);
 };
 
-Node.prototype.checkClick() {
-	var distance = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+Node.prototype.checkClick = function() {
+	var distance = dist(this.pos.x, this.pos.y, mouseX, mouseY) / 2;
 	if (mouseIsPressed && distance < this.size) {
+		console.log(distance);
+		// console.log('click');
 		this.isClicked = true;
 	}
 }
