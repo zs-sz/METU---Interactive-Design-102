@@ -2,11 +2,11 @@
 
 ## description:
 
-create a unique clock design based on the example. it has to display hours, minute and seconds
+create a unique clock design based on the example. it has to display hours, minutes and seconds
 
 ## guide
 
-inside sketch.js you will find a basic setup. basic 'time change handling' is provided  
+inside sketch.js you will find a basic setup. 'time change handling' is provided( draw() )
 ## references
 date object
 https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
