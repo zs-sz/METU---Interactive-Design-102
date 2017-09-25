@@ -1,7 +1,7 @@
 ## Codepen Templates
 
 Basic:
-[Link](http://codepen.io/balazs_sziklai/pen/dvyEjV)
+[Link](https://codepen.io/balazs_sziklai/pen/rGWXKz)
 
 Fluid,Mobile ready
 [Link](http://codepen.io/balazs_sziklai/pen/aJbrMJ)

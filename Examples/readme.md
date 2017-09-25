@@ -1,6 +1,13 @@
 # Reference helpers
 
-Links to the javascript basics/consepts we`ve learned so far: 
+## Links to codepen examples: 
+
+### Day 2 Loops:
+(variables, translate, FOR LOOP, cartesian coordinate system)
+https://codepen.io/balazs_sziklai/pen/BwpBaj
+
+
+## Links to the javascript basics/concepts we`ve learned so far: 
 ### Quick Mashup 
 see javascript_medley.js
 
@@ -18,8 +25,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteratio
 
 ### Functions 
 https://developer.mozilla.org/en-US/docs/Glossary/Function
-
-### Custom Objects
-soon
 
 
