@@ -3,14 +3,21 @@ var settings = {
 };
 
 function setup() {
+	// makes a resizable fluid canvas (utils)
+ 	pixelDensity(displayDensity());
 	initGui();
-	createCanvas(600,600);
+	Canvas.fluid();
 	background(settings.backgroundColor);
 }
 
 function draw() {
 	background(settings.backgroundColor);
-	// CUSTOMIZE HERE
+}
+
+function windowResized() {
+	// makes a resizable fluid canvas (utils)
+	Canvas.fluid();
+	background(settings.backgroundColor);
 }
 
 function initGui() {
