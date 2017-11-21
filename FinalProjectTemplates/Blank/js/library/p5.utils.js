@@ -17,3 +17,31 @@ p5.prototype.Canvas = {
 		}
 	}
 };
+
+p5.prototype.svgPointCloud = function(pathId, size) {
+	var path = document.getElementById(pathId);
+  var pointCloud = [];
+  var pathLength = path.getTotalLength();
+
+  for(var i = 0;i<size;i++) {
+    var randomOffset = Math.round(Math.random() * pathLength);
+    var randomPoint = path.getPointAtLength(randomOffset);
+    var v = new p5.Vector(randomPoint.x, randomPoint.y);
+    pointCloud.push(v);
+  }
+  
+  var avX = 0;
+  var avY = 0;
+  
+  pointCloud.forEach(function(p){
+    avX += p.x;
+    avY += p.y;
+  });
+  
+  avX = avX / pointCloud.length;
+  avY = avY / pointCloud.length;
+  pointCloud.push(createVector(avX, avY));
+  return pointCloud;
+};
+
+
