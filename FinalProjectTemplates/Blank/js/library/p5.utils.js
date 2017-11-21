@@ -18,7 +18,7 @@ p5.prototype.Canvas = {
 	}
 };
 
-p5.prototype.svgPointCloud = function(pathId, size) {
+p5.prototype.strokeCloud = function(pathId, size) {
 	var path = document.getElementById(pathId);
   var pointCloud = [];
   var pathLength = path.getTotalLength();
@@ -44,4 +44,27 @@ p5.prototype.svgPointCloud = function(pathId, size) {
   return pointCloud;
 };
 
+p5.prototype.fillCloud = function(pathId, size) {
+	var path = new Path2D(document.getElementById(pathId).getAttribute('d'));
+	ctx = drawingContext;
+	if(!path) {
+		console.log('no path element was found with this ID')
+		return;
+	}
 
+  var pointCloud = [];
+  
+  for (var i = size - 1; i >= 0; i--) {
+  	function search () {
+  		var rndP = createVector(random(width), random(height));
+  		if(ctx.isPointInPath(path, rndP.x, rndP.y)) {
+  			pointCloud.push(rndP);
+  		} else {
+        search();
+      }
+  	}
+    search();
+  }
+
+  return pointCloud;
+};
