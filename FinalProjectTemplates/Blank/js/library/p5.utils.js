@@ -68,3 +68,36 @@ p5.prototype.fillCloud = function(pathId, size) {
 
   return pointCloud;
 };
+
+
+function __grid(columns, colWidth) {
+  this.columns = columns;
+  if (colWidth) {
+    this.colWidth = colWidth;
+  } else {
+    this.colWidth = width / this.columns + 1;
+  }
+  this.head = 0;
+  this.currentRow = 0;
+  this.currentPosition = createVector(0, 0);
+}
+
+__grid.prototype.next = function() {
+  var currentCol = this.head % this.columns;
+  var currentX = currentCol * this.colWidth;
+  var currentY = this.currentRow * this.colWidth;
+  this.currentPosition.x = currentX;
+  this.currentPosition.y = currentY;
+  if (currentCol == this.columns - 1) {
+    this.currentRow++;
+  }
+  this.head++;
+  return this.currentPosition;
+};
+
+__grid.prototype.reset = function() {
+  this.head = 0;
+  this.currentRow = 0;
+}
+
+p5.prototype.GridLayout = __grid;
