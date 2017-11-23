@@ -26,21 +26,12 @@ p5.prototype.strokeCloud = function(pathId, size) {
   for(var i = 0;i<size;i++) {
     var randomOffset = Math.round(Math.random() * pathLength);
     var randomPoint = path.getPointAtLength(randomOffset);
+    var nextRandomPoint = path.getPointAtLength(randomOffset + 3);
+    var angle = atan2(randomPoint.y - nextRandomPoint.y, randomPoint.x - nextRandomPoint.x);
     var v = new p5.Vector(randomPoint.x, randomPoint.y);
+        v.angle = angle;
     pointCloud.push(v);
   }
-  
-  var avX = 0;
-  var avY = 0;
-  
-  pointCloud.forEach(function(p){
-    avX += p.x;
-    avY += p.y;
-  });
-  
-  avX = avX / pointCloud.length;
-  avY = avY / pointCloud.length;
-  pointCloud.push(createVector(avX, avY));
   return pointCloud;
 };
 
@@ -100,4 +91,4 @@ __grid.prototype.reset = function() {
   this.currentRow = 0;
 }
 
-p5.prototype.GridLayout = __grid;
+p5.prototype.Grid = __grid;
