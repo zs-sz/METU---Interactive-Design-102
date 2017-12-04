@@ -50,6 +50,7 @@ p5.prototype.fillCloud = function(pathId, size) {
   		var rndP = createVector(random(width), random(height));
   		if(ctx.isPointInPath(path, rndP.x, rndP.y)) {
   			pointCloud.push(rndP);
+        return;
   		} else {
         search();
       }
