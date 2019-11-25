@@ -16,7 +16,6 @@ void draw() {
 	rect(0,0,200,200);
 
 	if(frameCount < kepkockakSzama) {
-
 		saveFrame("#######-kepkocka.png");
 	}
 }
