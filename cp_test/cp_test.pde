@@ -7,8 +7,8 @@ ArrayList<Circle> circles;
 PImage img;
 
 void setup() {
-  size(1200, 1200);
-  img = loadImage("hi5.jpg");
+  size(800, 800);
+  img = loadImage("hi3.jpg");
   img.loadPixels();
   circles = new ArrayList<Circle>();
 }
