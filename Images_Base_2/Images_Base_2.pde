@@ -20,3 +20,10 @@ void draw() {
   scale(-1.0,1.0);
   image(layer,-width,0);
 }
+
+
+void keyPressed() {
+  if(key == 's') {
+    saveFrame();
+  }
+}
