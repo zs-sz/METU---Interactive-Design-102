@@ -145,7 +145,7 @@ void keyReleased() {
     //clear();
   }
   
-  if(key == 'n') {
+  if(key == '=') {
     selectedImageIndex = (int)(selectedImageIndex + 1) % gallery.size();
     selectedImage = gallery.get(selectedImageIndex);
   }
