@@ -13,6 +13,7 @@ PImage img;
 File dir; 
 File [] files;
 Boolean isInverted = false;
+
 void setup() {
   size(1200,900);
   //fullScreen();
@@ -30,40 +31,12 @@ void draw() {
   image(canvas,0,0);
 }
 
-void keyReleased() {
-  if(key == 'r') {
-    layoutRandom();
-  }
-  
-  if(key == 'e') {
-    layoutEllipse();
-  }
-  
-  if(key == 'c') {
-     clearAll();
-    //clear();
-  }
-  
-   
-  if(key == 'i') {
-     isInverted =  !isInverted;
-    //clear();
-  }
-  
-  if(key == '=') {
-    selectedImageIndex = (int)(selectedImageIndex + 1) % gallery.size();
-    selectedImage = gallery.get(selectedImageIndex);
-  }
-}
-
 void clearAll() {
   background(255);
   canvas.beginDraw();
   canvas.clear();
   canvas.endDraw();
 };
-
-
 
 
 void layoutRandom() {
@@ -149,4 +122,31 @@ for (int i = 0; i <= files.length - 1; i++)
 
 PImage randomImage() {
   return gallery.get((int)random(gallery.size()));
+}
+
+
+void keyReleased() {
+  if(key == 'r') {
+    layoutRandom();
+  }
+  
+  if(key == 'e') {
+    layoutEllipse();
+  }
+  
+  if(key == 'c') {
+     clearAll();
+    //clear();
+  }
+  
+   
+  if(key == 'i') {
+     isInverted =  !isInverted;
+    //clear();
+  }
+  
+  if(key == 'n') {
+    selectedImageIndex = (int)(selectedImageIndex + 1) % gallery.size();
+    selectedImage = gallery.get(selectedImageIndex);
+  }
 }
